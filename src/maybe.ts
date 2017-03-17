@@ -6,11 +6,11 @@ export interface MaybePattern<T, K> {
 export class Maybe<T> {
     private constructor(private isNothing: boolean, private value?: T) {};
 
-    public static just<T>(value: T) {
+    public static just<T>(value: T): Maybe<T> {
         return new Maybe(false, value);
     }
 
-    public static nothing<T>() {
+    public static nothing<T>(): Maybe<T> {
         return new Maybe<T>(true);
     }
 
